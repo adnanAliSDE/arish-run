@@ -7,24 +7,27 @@
     <title>Arish Run</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .legs{
+        .legs {
             z-index: -1;
         }
+
         .legs .leg-l {
             animation: upDown 0.5s 0s infinite;
             transform: translateY(-16px);
         }
+
         .legs .leg-r {
-            animation: upDown 0.5s  0.25s infinite;
+            animation: upDown 0.5s 0.25s infinite;
             transform: translateY(-16px);
             animation: name duration timing-function delay iteration-count direction fill-mode;
         }
 
         @keyframes upDown {
-            from{
+            from {
                 transform: translateY(0);
             }
-          to {
+
+            to {
                 transform: translateY(-16px);
             }
         }
@@ -35,48 +38,53 @@
     <header class="p-4 mb-4 text-center  text-white bg-green-600">
         <h1 class="font-bold text-2xl">Welcome to Arish Run</h1>
     </header>
-    <section class="prepare-game mx-4 hidden">
-        <h2 class="text-xl font-bold mb-2">Choose your character</h2>
-        <p class="char-name">Your character: <span id="name">null</span></p>
-        <section class="characters py-4 flex flex-wrap justify-start space-x-4">
-            <div class="item bg-black text-white text-center p-2">
-                <img src="./images/arish.png" width="100px" alt="" class="pic mb-2">
-                <p class="name">Arish Bhai</p>
-            </div>
-            <div class="item bg-black text-white text-center p-2">
-                <img src="./images/arish.png" width="100px" alt="" class="pic mb-2">
-                <p class="name">Arish Bhai</p>
-            </div>
-            <div class="item bg-black text-white text-center p-2">
-                <img src="./images/arish.png" width="100px" alt="" class="pic mb-2">
-                <p class="name">Arish Bhai</p>
-            </div>
-        </section>
-        <p class="text-blue-600 mb-2">Adnan, Shahnawaz, mogli ji and more characters coming soon...</p>
-        <button class="btn-primary px-4 py-2 text-white rounded-md bg-green-600">Start Game</button>
+    <main>
 
-    </section>
-
-    <!-- Game Board -->
-    <section class="game px-4">
-        <section class="status flex justify-between">
-            <p><span id="life-count">♥♥♥</span></p>
-            <p>Score: <span id="score">000</span></p>
-        </section>
-        <section class="playground">
-            <div class="character absolute bottom-16 left-1/3 mb-4 flex flex-col justify-between items-center">
-                <img src="./images/arish_char.png" alt="" class="main w-28">
-                <div class="legs w-16 pl-2 flex justify-between">
-                    <img src="./images/leg.png" class="leg-l w-6">
-                    <img src="./images/leg.png" class="leg-r w-6">
+        <section class="prepare-game mx-4">
+            <h2 class="text-xl font-bold mb-2">Choose your character</h2>
+            <p class="char-name">Your character: <span id="name">null</span></p>
+            <section class="characters py-4 flex flex-wrap justify-start space-x-4">
+                <div class="item bg-black text-white text-center p-2">
+                    <img src="./images/arish.png" width="100px" alt="" class="pic mb-2">
+                    <p class="name">Arish Bhai</p>
                 </div>
-            </div>
-            <div class="road">
-                <div class="w-full bg-gray-500 p-4 absolute bottom-12 left-0"></div>
-                <div class="w-full bg-blue-300 p-8 absolute bottom-0 left-0"></div>
-            </div>
+                <div class="item bg-black text-white text-center p-2">
+                    <img src="./images/arish.png" width="100px" alt="" class="pic mb-2">
+                    <p class="name">Arish Bhai</p>
+                </div>
+                <div class="item bg-black text-white text-center p-2">
+                    <img src="./images/arish.png" width="100px" alt="" class="pic mb-2">
+                    <p class="name">Arish Bhai</p>
+                </div>
+            </section>
+            <p class="text-blue-600 mb-2">Adnan, Shahnawaz, mogli ji and more characters coming soon...</p>
+            <button id="play-btn" class="btn-primary px-4 py-2 text-white rounded-md bg-green-600">Start Game</button>
+
         </section>
-    </section>
+
+        <!-- Game Board -->
+        <section class="game px-4 hidden">
+            <section class="status flex justify-between">
+                <p><span id="life-count">♥♥♥</span></p>
+                <p>Score: <span id="score">000</span></p>
+            </section>
+            <section class="playground">
+                <div class="character absolute bottom-16 left-1/3 mb-4 flex flex-col justify-between items-center">
+                    <img src="./images/arish_char.png" alt="" class="main w-28">
+                    <div class="legs w-16 pl-2 flex justify-between">
+                        <img src="./images/leg.png" class="leg-l w-6">
+                        <img src="./images/leg.png" class="leg-r w-6">
+                    </div>
+                </div>
+                <div class="road">
+                    <div class="w-full bg-gray-500 p-4 absolute bottom-12 left-0"></div>
+                    <div class="w-full bg-blue-300 p-8 absolute bottom-0 left-0"></div>
+                </div>
+            </section>
+        </section>
+    </main>
+
 </body>
+<script src="./engine.js"></script>
 
 </html>
